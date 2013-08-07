@@ -5,9 +5,11 @@
 $mindate=$_POST['mindate'];
 $maxdate=$_POST['maxdate'];
 $trgRnk=$_POST['trgRnk'];
+$tgtpg=1 + $_POST['pages'];
 if(!$trgRnk){$trgRnk=200;}
 if(!$mindate){$mindate="2013-07-01";}
 if(!$maxdate){$maxdate="2013-07-31";}
+if(!$tgtpg){$tgtpg=2;}
 
 // --- Define Functions ----
 
@@ -86,7 +88,8 @@ function listUniques($url,$trgRnk)
         $workStr=$file_contents[$lp];
         $urlex=explode("/",$workStr);
         $gameID=$urlex[2]."&nbsp;";
-        if(getBGGrank($gameID)<$trgRnk){$rnk=0;} else {$rnk=1;}
+        $BGGrank=getBGGrank($gameID);
+        if($BGGrank<$trgRnk || $BGGrank=="Not Ranked"){$rnk=0;} else {$rnk=1;}
         if($rnk==1)
           {
            echo "<br />";
@@ -107,7 +110,6 @@ function listUniques($url,$trgRnk)
 // --- Begin Code ---
 
 $pg=1;
-$tgtpg=2;
 while($pg<$tgtpg)
   {
    $url='http://www.boardgamegeek.com/plays/bygame/subtype/boardgame/start/'.$mindate.'/end/'.$maxdate.'/page/'.$pg.'?sortby=distinctusers&subtype=boardgame';
