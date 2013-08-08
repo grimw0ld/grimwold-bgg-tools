@@ -32,7 +32,7 @@ function addtext(inputtext) {
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="row well">
              <div class="span2">
-                    <img src="http://www.grimwold.org.uk/bgg/avatar.jpg">
+                    <img src="avatar.jpg">
                 </div>
                 <div class="span7">
                     <br/>
