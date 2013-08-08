@@ -22,11 +22,6 @@ print<<<TOEND
         </style>
     </head>
 
-<script>
-function addtext(inputtext) {
-            $('#username').val(inputtext);}
-</script>
-
     <body>
         <div class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
