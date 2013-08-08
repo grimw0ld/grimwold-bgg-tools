@@ -88,7 +88,8 @@ function listUniques($url,$trgRnk)
         $workStr=$file_contents[$lp];
         $urlex=explode("/",$workStr);
         $gameID=$urlex[2]."&nbsp;";
-        if(getBGGrank($gameID)<$trgRnk){$rnk=0;} else {$rnk=1;}
+        $BGGrank=getBGGrank($gameID);
+        if($BGGrank<$trgRnk || $BGGrank=="Not Ranked"){$rnk=0;} else {$rnk=1;}
         if($rnk==1)
           {
            echo "<br />";
