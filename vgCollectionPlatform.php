@@ -77,11 +77,7 @@ function getVGGplatform($VGGuser)
   }
 
 $coll=getVGGplatform($username);
-
 $len=count($coll);
-
-echo "<h2>$username</h2>";
-echo "<h2>$targetPlat</h2>";
 $st=0;
 while($st<$len)
   {
